@@ -59,6 +59,14 @@
       }
     }
 
+    li:hover {
+      border-bottom: solid 2px hsl(0, 0, 100, 0.25);
+      @media (max-width: 375px) {
+        border-bottom: 0;
+        border-right: solid 2px hsl(0, 0, 100, 0.25);
+      }
+    }
+
     background-color: hsl(0 0% 0% / 0.85);
     color: white;
 
@@ -120,6 +128,7 @@
   background-image: url(assets/shared/icon-close.svg);
 }
 
+li.active:hover,
 .active {
   border-bottom: solid 2px white;
   @media (max-width: 375px) {

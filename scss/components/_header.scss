@@ -1,36 +1,68 @@
 @use "../util/var" as v;
 
 .header {
-  margin: 1.5rem;
+  display: flex;
+  margin: min(10em, 15vw) auto 0;
+  padding: 0 min(7vw, 2.5em);
+
   text-align: center;
+  max-width: 70%;
 
-  &__tag {
-    font-family: v.$font-barlow-condensed;
-    letter-spacing: 2.7px;
+  @media (max-width: v.$tab) {
+    min-height: calc(100vh - 70px - min(10em, 15vw));
+    max-width: 450px;
+    flex-direction: column;
   }
 
-  &__heading {
-    font-family: v.$font-bellefair;
-    color: white;
-    font-size: 5rem;
-    margin: 1.5rem 0;
-  }
+  &__content {
+    @media (min-width: v.$tab) {
+      max-width: 40%;
+      text-align: left;
+    }
 
-  &__para {
-    font-size: 0.95rem;
+    &__tag {
+      font-family: v.$font-barlow-condensed;
+      letter-spacing: 2.7px;
+      font-size: clamp(1rem, 3vw, 1.25rem);
+    }
+
+    &__heading {
+      color: white;
+      font-size: clamp(5rem, 10vw, 7rem);
+      margin: 0.3em 0;
+    }
+
+    &__para {
+      font-size: clamp(0.95rem, 3vw, 1.15rem);
+    }
   }
 
   &__explore {
     display: flex;
     align-items: center;
     justify-content: center;
+
     width: 10rem;
     height: 10rem;
-    margin: 4rem auto 0;
-    background-color: white;
+
+    margin: auto;
+
     color: #0b0d17;
+    background-color: white;
+
     border-radius: 5rem;
     font-family: v.$font-bellefair;
     font-size: 1.5rem;
+
+    cursor: pointer;
+
+    @media (min-width: v.$tab) {
+      align-self: flex-end;
+      margin: 0 0 0 auto;
+    }
+  }
+
+  &__explore:hover {
+    box-shadow: 0 0 0 clamp(2rem, 4vw, 3.25rem) #97979780;
   }
 }

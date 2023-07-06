@@ -1,5 +1,4 @@
-@forward "util";
-@forward "components";
+@forward "./landing/";
 
 body {
   background-image: url("assets/home/background-home-mobile.jpg");

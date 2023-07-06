@@ -37,6 +37,20 @@ p {
   font-size: clamp(0.95rem, 3vw, 1.15rem);
 }
 
+.subheading1 {
+  font-family: v.$font-bellefair;
+  font-size: 1.75rem;
+  color: white;
+  margin-top: 0.45rem;
+}
+
+.subheading2 {
+  font-family: v.$font-bellefair;
+  font-size: 0.875rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
 a,
 a:visited,
 a:active {

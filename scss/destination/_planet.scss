@@ -1,0 +1,79 @@
+@use "../util/var" as v;
+
+.planet {
+  margin: min(10em, 15vw) auto 0;
+  padding: 0 min(7vw, 2.5em);
+  text-align: center;
+
+  > h5 {
+    color: white;
+
+    span {
+      color: #ffffff50;
+      font-weight: 700;
+      padding-right: 0.5em;
+    }
+
+    @media (min-width: v.$mobile) {
+      text-align: left;
+    }
+  }
+
+  &__img {
+    width: 10.625rem;
+    aspect-ratio: 1;
+    margin: 2rem auto 1.25rem;
+
+    @media (min-width: v.$mobile) {
+      width: 18.75rem;
+      margin: 3.75rem auto 1.625rem;
+    }
+  }
+
+  &__info {
+    max-width: 570px;
+    margin: 0 auto;
+
+    &__tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    &__tabs button {
+      border: none;
+      border-radius: none;
+      background: none;
+      cursor: pointer;
+      color: inherit;
+      padding-bottom: 0.5em;
+    }
+
+    &__heading {
+      color: white;
+      text-transform: uppercase;
+      margin-top: 1.25rem;
+    }
+
+    &__data {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid #ffffff30;
+
+      @media (min-width: v.$mobile) {
+        display: flex;
+        justify-content: center;
+        gap: 5rem;
+      }
+    }
+
+    &__data > div {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.active_tab {
+  border-bottom: 3px solid white;
+  color: white;
+}

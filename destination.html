@@ -12,10 +12,10 @@
       <button class="nav__button"></button>
       <div class="nav__line"></div>
       <ul class="nav__list flex">
-        <li class="active">
+        <li>
           <a href="index.html"> <span class="nav__list--num">01</span>HOME </a>
         </li>
-        <li>
+        <li class="active">
           <a href="destination.html">
             <span class="nav__list--num">02</span>DESTINATION
           </a>
@@ -30,6 +30,50 @@
         </li>
       </ul>
     </nav>
+
+    <section class="planet">
+      <h5><span>01</span>Pick your destination</h5>
+      <img
+        src="assets/destination/image-moon.webp"
+        alt="moon"
+        class="planet__img"
+      />
+      <div class="planet__info">
+        <ul class="planet__info__tabs">
+          <li class="active_tab">
+            <button><h5>Moon</h5></button>
+          </li>
+          <li>
+            <button><h5>Mars</h5></button>
+          </li>
+          <li>
+            <button><h5>Europa</h5></button>
+          </li>
+          <li>
+            <button><h5>Titan</h5></button>
+          </li>
+        </ul>
+
+        <h3 class="planet__info__heading">Moon</h3>
+        <p class="planet__info__para">
+          See our planet as you’ve never seen it before. A perfect relaxing trip
+          away to help regain perspective and come back refreshed. While you’re
+          there, take in some history by visiting the Luna 2 and Apollo 11
+          landing sites.
+        </p>
+        <div class="planet__info__data">
+          <div>
+            <p class="subheading2">Avg. Distance</p>
+            <p class="subheading1">384,400 KM</p>
+          </div>
+
+          <div>
+            <p class="subheading2">Est. Travel Time</p>
+            <p class="subheading1">3 Days</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <script type="module" src="./js/nav.js"></script>
   </body>

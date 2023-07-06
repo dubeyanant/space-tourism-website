@@ -1,7 +1,7 @@
 const primaryNav = document.querySelector(".nav__list");
-const navToggle = document.querySelector(".nav__menu");
+const navButton = document.querySelector(".nav__button");
 
-navToggle.addEventListener("click", () => {
+navButton.addEventListener("click", () => {
   primaryNav.classList.toggle("translate");
-  navToggle.classList.toggle("change");
+  navButton.classList.toggle("change");
 });

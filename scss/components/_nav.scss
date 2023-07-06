@@ -1,21 +1,24 @@
 @use "../util/var" as v;
 
 .nav {
-  margin: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  &__logo {
-    width: 2.5rem;
-  }
 
   &__nav a {
     text-decoration: none;
     color: white;
   }
 
-  &__menu {
+  &__logo {
+    margin: 1.5em;
+    @media (min-width: 375px) {
+      margin: 0 0 0 1.5em;
+    }
+    width: min(9vw, 2.5rem);
+  }
+
+  &__button {
     display: block;
     position: absolute;
     z-index: 9999;
@@ -26,28 +29,48 @@
     aspect-ratio: 1;
     right: 1.5rem;
     top: 2.1rem;
+
+    @media (min-width: 375px) {
+      display: none;
+    }
   }
 
   &__list {
-    list-style: none;
-    font-family: v.$font-barlow-condensed;
+    padding: 1.5em;
+    --gap: min(4vw, 2rem);
+
     background-color: hsl(0 0% 0% / 0.85);
+    color: white;
+
+    list-style: none;
+    font-size: min(3.5vw, 1rem);
+    font-family: v.$font-barlow-condensed;
+
+    letter-spacing: 1px;
 
     @supports (backdrop-filter: blur(1rem)) {
       background-color: hsl(0 0% 100% / 0.1);
+      @media (min-width: 375px) {
+        background-color: hsl(0 0% 100% / 0.05);
+      }
       backdrop-filter: blur(1rem);
     }
 
     &--num {
       font-weight: 700;
+      padding-right: 0.5em;
+      @media (min-width: 375px) and (max-width: 760px) {
+        display: none;
+      }
     }
 
     @media (max-width: 375px) {
       flex-direction: column;
       position: fixed;
       inset: 0 0 0 30%;
-      padding: min(30vh, 10rem) 2em;
       --gap: 1.5rem;
+
+      padding: min(30vh, 10rem) 2em;
 
       transform: translateX(100%);
       transition: transform 350ms ease-out;

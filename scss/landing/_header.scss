@@ -27,6 +27,17 @@
     }
   }
 
+  > button {
+    border: none;
+    background: none;
+    margin: auto;
+
+    @media (min-width: v.$tab) {
+      align-self: flex-end;
+      margin: 0 0 0 auto;
+    }
+  }
+
   &__explore {
     display: flex;
     align-items: center;
@@ -34,8 +45,6 @@
 
     width: 10rem;
     height: 10rem;
-
-    margin: auto;
 
     color: #0b0d17;
     background-color: white;
@@ -45,11 +54,6 @@
     font-size: 1.5rem;
 
     cursor: pointer;
-
-    @media (min-width: v.$tab) {
-      align-self: flex-end;
-      margin: 0 0 0 auto;
-    }
   }
 
   &__explore:hover {

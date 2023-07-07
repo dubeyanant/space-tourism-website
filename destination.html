@@ -36,22 +36,22 @@
       <div class="planet--flex">
         <img
           src="assets/destination/image-moon.webp"
-          alt="moon"
+          alt="Moon"
           class="planet__img"
         />
         <div class="planet__info">
           <ul class="planet__info__tabs">
-            <li class="active_tab">
-              <button><h5>Moon</h5></button>
+            <li>
+              <button class="moon active_tab"><h5>Moon</h5></button>
             </li>
             <li>
-              <button><h5>Mars</h5></button>
+              <button class="mars"><h5>Mars</h5></button>
             </li>
             <li>
-              <button><h5>Europa</h5></button>
+              <button class="europa"><h5>Europa</h5></button>
             </li>
             <li>
-              <button><h5>Titan</h5></button>
+              <button class="titan"><h5>Titan</h5></button>
             </li>
           </ul>
           <h3 class="planet__info__heading">Moon</h3>
@@ -64,11 +64,11 @@
           <div class="planet__info__data">
             <div>
               <p class="subheading2">Avg. Distance</p>
-              <p class="subheading1">384,400 KM</p>
+              <p class="subheading1 distance">384,400 KM</p>
             </div>
             <div>
               <p class="subheading2">Est. Travel Time</p>
-              <p class="subheading1">3 Days</p>
+              <p class="subheading1 time">3 Days</p>
             </div>
           </div>
         </div>
@@ -76,5 +76,6 @@
     </section>
 
     <script type="module" src="./js/nav.js"></script>
+    <script type="module" src="./js/planet.js"></script>
   </body>
 </html>

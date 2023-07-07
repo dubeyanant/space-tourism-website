@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crew</title>
+    <link rel="icon" type="image/png" href="assets/favicon-32x32.png" />
+    <link rel="stylesheet" href="crew.css" />
+  </head>
+  <body>
+    <nav class="nav flex">
+      <img class="nav__logo" src="assets/shared/logo.svg" />
+      <button class="nav__button"></button>
+      <div class="nav__line"></div>
+      <ul class="nav__list flex">
+        <li>
+          <a href="index.html"> <span class="nav__list--num">01</span>HOME </a>
+        </li>
+        <li>
+          <a href="destination.html">
+            <span class="nav__list--num">02</span>DESTINATION
+          </a>
+        </li>
+        <li class="active">
+          <a href="crew.html"> <span class="nav__list--num">03</span>CREW </a>
+        </li>
+        <li>
+          <a href="technology.html">
+            <span class="nav__list--num">04</span>TECHNOLOGY
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="people">
+      <h5><span>02</span>Meet your crew</h5>
+      <div class="people__info--wrapper">
+        <img
+          src="assets/crew/image-douglas-hurley.webp"
+          alt="Douglas Hurley"
+          class="people__img"
+        />
+        <div class="people__info">
+          <div class="people__info__dots">
+            <span class="people__info__dots__dot active_dot"></span>
+            <span class="people__info__dots__dot"></span>
+            <span class="people__info__dots__dot"></span>
+            <span class="people__info__dots__dot"></span>
+          </div>
+          <div class="people__info__data">
+            <p class="people__info__data__position">Commander</p>
+            <p class="people__info__data__name">Douglas Hurley</p>
+            <p class="people__info__data__des">
+              Douglas Gerald Hurley is an American engineer, former Marine Corps
+              pilot and former NASA astronaut. He launched into space for the
+              third time as commander of Crew Dragon Demo-2.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="./js/nav.js"></script>
+  </body>
+</html>

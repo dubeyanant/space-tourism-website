@@ -1,7 +1,7 @@
 @use "../util/var" as v;
 
 .planet {
-  margin: min(10em, 15vw) auto 0;
+  margin: clamp(2rem, 10vw, 4.75rem) auto 0;
   padding: 0 min(7vw, 2.5em);
   text-align: center;
 
@@ -84,7 +84,6 @@
 
   @media (min-width: v.$tab) {
     text-align: left;
-    margin: min(5vw, 4em) auto 0;
 
     &--flex {
       display: flex;

@@ -28,7 +28,9 @@
     margin: clamp(2rem, 8vw, 3.5rem) auto 0;
 
     @media (min-width: v.$tab) {
-      // width: clamp(28.5rem, 48vw, 35.5rem);
+      width: fit-content;
+      height: 590px; // rigid values cause of aesthetics // removing both will not cause any issues
+      object-fit: contain; // rigid values cause of aesthetics // removing both will not cause any issues
       margin-top: 0;
     }
   }

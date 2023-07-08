@@ -59,13 +59,14 @@
         font-family: v.$font-bellefair;
         text-transform: uppercase;
         color: #ffffff80;
+        font-size: clamp(1rem, 4vw, 1.5rem);
       }
 
       &__name {
         font-family: v.$font-bellefair;
         text-transform: uppercase;
         color: #ffffff;
-        font-size: 1.5rem;
+        font-size: clamp(1.5rem, 6.5vw, 2.5rem);
         margin: 0.5rem 0 1rem;
       }
     }

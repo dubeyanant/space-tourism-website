@@ -1,34 +1,56 @@
-// Selecting the circle buttons
-const circleButtons = document.querySelectorAll(
-  ".first_button, .second_button, .third_button"
+// Objects holding data for each technology
+const technologyObject = [
+  {
+    heading: "LAUNCH VEHICLE",
+    description:
+      "A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!",
+    imagel: "assets/technology/image-launch-vehicle-landscape.jpg",
+    imagep: "assets/technology/image-launch-vehicle-portrait.jpg",
+  },
+  {
+    heading: "SPACEPORT",
+    description:
+      "A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral, our spaceport is ideally situated to take advantage of the Earth’s rotation for launch.",
+    imagel: "assets/technology/image-spaceport-landscape.jpg",
+    imagep: "assets/technology/image-spaceport-portrait.jpg",
+  },
+  {
+    heading: "SPACE CAPSULE",
+    description:
+      "A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to reenter the Earth's atmosphere without wings. Our capsule is where you'll spend your time during the flight. It includes a space gym, cinema, and plenty of other activities to keep you entertained.",
+    imagel: "assets/technology/image-space-capsule-landscape.jpg",
+    imagep: "assets/technology/image-space-capsule-portrait.jpg",
+  },
+];
+
+// Selecting the circle buttons container
+const circleButtonsContainer = document.querySelector(
+  ".vehicle__info__buttons"
 );
 
-// Selecting other elements: heading, des, img
-const heading = document.querySelector(".vehicle__info__data__heading");
-const des = document.querySelector(".vehicle__info__data__des");
-const imagel = document.querySelector(".vehicle__imgs__imgl");
-const imagep = document.querySelector(".vehicle__imgs__imgp");
+// Function to create a circle button
+const createCircleButton = function (index) {
+  const button = document.createElement("div");
+  button.classList.add("vehicle__info__buttons__button");
+  button.textContent = index + 1;
+  if (index === 0) button.classList.add("active_button"); // Add active_dot class to the first button
+  button.addEventListener("click", change.bind(null, index));
+  return button;
+};
 
-// Arrays holding data for each section
-const headingArray = ["LAUNCH VEHICLE", "SPACEPORT", "SPACE CAPSULE"];
-const desArray = [
-  "A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!",
-  "A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral, our spaceport is ideally situated to take advantage of the Earth’s rotation for launch.",
-  "A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to reenter the Earth's atmosphere without wings. Our capsule is where you'll spend your time during the flight. It includes a space gym, cinema, and plenty of other activities to keep you entertained.",
-];
-const imagelArray = [
-  "assets/technology/image-launch-vehicle-landscape.jpg",
-  "assets/technology/image-spaceport-landscape.jpg",
-  "assets/technology/image-space-capsule-landscape.jpg",
-];
-const imagepArray = [
-  "assets/technology/image-launch-vehicle-portrait.jpg",
-  "assets/technology/image-spaceport-portrait.jpg",
-  "assets/technology/image-space-capsule-portrait.jpg",
-];
+// Function to update the circle buttons
+const updateCircleButtons = function () {
+  for (let i = 0; i < technologyObject.length; i++) {
+    const button = createCircleButton(i);
+    circleButtonsContainer.appendChild(button);
+  }
+};
 
 // Function to change the active state of circle buttons
 const changeState = function (n) {
+  const circleButtons = document.querySelectorAll(
+    ".vehicle__info__buttons__button"
+  );
   for (let i = 0; i < circleButtons.length; i++) {
     if (i == n) circleButtons[i].classList.add("active_button");
     else circleButtons[i].classList.remove("active_button");
@@ -39,17 +61,20 @@ const changeState = function (n) {
 const change = function (n) {
   changeState(n);
 
-  heading.textContent = headingArray[n];
-  des.textContent = desArray[n];
+  const heading = document.querySelector(".vehicle__info__data__heading");
+  const des = document.querySelector(".vehicle__info__data__des");
+  const imagel = document.querySelector(".vehicle__imgs__imgl");
+  const imagep = document.querySelector(".vehicle__imgs__imgp");
 
-  imagel.setAttribute("src", imagelArray[n]);
-  imagel.setAttribute("alt", headingArray[n]);
+  heading.textContent = technologyObject[n].heading;
+  des.textContent = technologyObject[n].description;
 
-  imagep.setAttribute("src", imagepArray[n]);
-  imagep.setAttribute("alt", headingArray[n]);
+  imagel.setAttribute("src", technologyObject[n].imagel);
+  imagel.setAttribute("alt", technologyObject[n].heading);
+
+  imagep.setAttribute("src", technologyObject[n].imagep);
+  imagep.setAttribute("alt", technologyObject[n].heading);
 };
 
-// Adding event listeners to the circle buttons
-circleButtons.forEach(function (button, index) {
-  button.addEventListener("click", change.bind(null, index));
-});
+// Call the function to create initial circle buttons
+updateCircleButtons();

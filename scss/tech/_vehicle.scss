@@ -32,7 +32,8 @@
   &__imgs {
     &__imgp {
       display: none;
-      object-fit: contain;
+      min-width: 20rem;
+      margin-left: 2rem;
       background-repeat: no-repeat;
     }
 

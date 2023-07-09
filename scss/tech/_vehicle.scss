@@ -39,7 +39,7 @@
         align-items: center;
         justify-content: center;
 
-        width: 2.5rem;
+        width: clamp(2.5rem, 10vw, 3.75rem);
         aspect-ratio: 1;
 
         color: white;
@@ -47,8 +47,13 @@
         margin-inline: 0.75em;
 
         border-radius: 50%;
-        border: solid 1px #ffffff50;
+        border: solid 1px #ffffff40;
       }
+
+      &__button:hover {
+        border: solid 1px #ffffff;
+      }
+
       &__button.active_button {
         color: #0b0d17;
         background-color: white;
@@ -61,7 +66,7 @@
       margin-bottom: clamp(1.25rem, 6.25vw, 2.5rem);
 
       &__sub {
-        font-size: 0.875rem;
+        font-size: 1rem;
       }
 
       &__heading {

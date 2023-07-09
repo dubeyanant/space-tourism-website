@@ -1,1 +1,76 @@
 @use "../util/var" as v;
+
+.vehicle {
+  margin: clamp(2rem, 10vw, 4.75rem) auto 0;
+  text-align: center;
+
+  @media (min-width: v.$tab) {
+    width: 85%;
+  }
+
+  > h5 {
+    padding: 0 min(7vw, 2.5em);
+    margin-bottom: clamp(2rem, 9vw, 3.75rem);
+    color: white;
+
+    span {
+      color: #ffffff50;
+      font-weight: 700;
+      padding-right: 0.5em;
+    }
+
+    @media (min-width: v.$mobile) {
+      text-align: left;
+    }
+  }
+
+  &__info {
+    padding: 0 min(7vw, 2.5em);
+    max-width: 450px;
+    margin: 0 auto;
+
+    &__buttons {
+      display: flex;
+      justify-content: center;
+      margin-block: clamp(2rem, 9vw, 3.5rem) clamp(1.625rem, 7.75vw, 3.5rem);
+
+      &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 2.5rem;
+        aspect-ratio: 1;
+
+        color: white;
+
+        margin-inline: 0.75em;
+
+        border-radius: 50%;
+        border: solid 1px #ffffff50;
+      }
+      &__button.active_button {
+        color: #0b0d17;
+        background-color: white;
+
+        border: none;
+      }
+    }
+
+    &__data {
+      margin-bottom: clamp(1.25rem, 6.25vw, 2.5rem);
+
+      &__sub {
+        font-size: 0.875rem;
+      }
+
+      &__heading {
+        font-family: v.$font-bellefair;
+        text-transform: uppercase;
+        color: #ffffff;
+        font-size: clamp(1.5rem, 5.5vw, 3.25rem);
+        margin-block: clamp(0.5rem, 2.5vw, 1rem) 1rem;
+      }
+    }
+  }
+}

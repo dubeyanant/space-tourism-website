@@ -11,12 +11,15 @@
   }
 
   &__logo {
-    margin: 1.5em 1.5em 0;
-    @media (min-width: v.$mobile) {
-      margin: 0 0 0 1.5em;
-      width: min(8.6vw, 2.5rem);
+    &--wrap {
+      flex: 0 0 2.5rem;
+      margin: 1.5em 1.5em 0;
+
+      @media (min-width: v.$mobile) {
+        flex-basis: min(8.6vw, 2.5rem);
+        margin: 0 0 0 1.5em;
+      }
     }
-    width: 2.5rem;
   }
 
   &__button {

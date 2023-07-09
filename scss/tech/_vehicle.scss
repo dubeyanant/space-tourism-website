@@ -5,34 +5,81 @@
   text-align: center;
 
   @media (min-width: v.$tab) {
-    width: 85%;
+    margin-left: 7.5%;
+    text-align: left;
   }
 
   > h5 {
-    padding: 0 min(7vw, 2.5em);
-    margin-bottom: clamp(2rem, 9vw, 3.75rem);
+    padding: 0 min(7vw, 2.5rem);
+    margin-bottom: clamp(2rem, 9vw, 2.75rem);
     color: white;
+
+    @media (min-width: v.$mobile) {
+      text-align: left;
+    }
+
+    @media (min-width: v.$tab) {
+      padding: 0;
+    }
 
     span {
       color: #ffffff50;
       font-weight: 700;
       padding-right: 0.5em;
     }
+  }
 
-    @media (min-width: v.$mobile) {
-      text-align: left;
+  &__imgs {
+    &__imgp {
+      display: none;
+      object-fit: contain;
+      background-repeat: no-repeat;
+    }
+
+    @media (min-width: v.$tab) {
+      &__imgl {
+        display: none;
+      }
+
+      &__imgp {
+        display: block;
+      }
     }
   }
 
   &__info {
-    padding: 0 min(7vw, 2.5em);
     max-width: 450px;
     margin: 0 auto;
+    padding: 0 min(7vw, 2.5rem);
+
+    @media (min-width: v.$tab) {
+      display: flex;
+
+      max-width: 600px;
+
+      margin: 0;
+      padding: 0;
+    }
+
+    &--wrapper {
+      @media (min-width: v.$tab) {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
 
     &__buttons {
       display: flex;
       justify-content: center;
       margin-block: clamp(2rem, 9vw, 3.5rem) clamp(1.625rem, 7.75vw, 3.5rem);
+
+      @media (min-width: v.$tab) {
+        flex-direction: column;
+
+        margin-block: 0;
+      }
 
       &__button {
         display: flex;
@@ -48,6 +95,13 @@
 
         border-radius: 50%;
         border: solid 1px #ffffff40;
+
+        cursor: pointer;
+
+        @media (min-width: v.$tab) {
+          margin-inline: 0;
+          margin-block: 0.75em;
+        }
       }
 
       &__button:hover {
@@ -64,6 +118,11 @@
 
     &__data {
       margin-bottom: clamp(1.25rem, 6.25vw, 2.5rem);
+
+      @media (min-width: v.$tab) {
+        margin-bottom: 0;
+        margin-left: clamp(2rem, 5vw, 5rem);
+      }
 
       &__sub {
         font-size: 1rem;

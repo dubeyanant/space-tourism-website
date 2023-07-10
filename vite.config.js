@@ -10,5 +10,9 @@ export default defineConfig({
         technology: "/technology.html",
       },
     },
+    assetsInlineLimit: 0,
+    assetsDir: "assets",
+    outDir: "dist",
   },
+  publicDir: "public",
 });
